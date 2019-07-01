@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadUUID</key>
+			<string>E6671FFB-66C2-49F7-AB1B-CD5A0AB4EE26</string>
+			<key>PayloadType</key>
+			<string>com.apple.vpn.managed.applayer</string>
+			<key>PayloadIdentifier</key>
+			<string>com.apple.vpn.managed.applayer.388257C2-7902-42B5-BDAE-6E69A441C3A2</string>
+			<key>VPNType</key>
+			<string>VPN</string>
+			<key>VPNSubType</key>
+			<string>com.example.apple-samplecode.QNE-iOS.AppProxy</string>
+			<key>UserDefinedName</key>
+			<string>QNEAppProxy</string>
+			<key>PayloadDescription</key>
+			<string>Configures VPN settings</string>
+			<key>PayloadDisplayName</key>
+			<string>VPN</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>VPNUUID</key>
+			<string>825886EA-BB00-4805-ADD6-1674C531669E</string>
+			<key>VPN</key>
+			<dict>
+				<key>RemoteAddress</key>
+				<string>example.com</string>
+				<key>AuthenticationMethod</key>
+				<string>Password</string>
+				<key>AuthName</key>
+				<string>mrgumby</string>
+				<key>AuthPassword</key>
+				<string>opendoor</string>
+			</dict>
+			<key>Proxies</key>
+			<dict>
+				<key>HTTPEnable</key>
+				<integer>0</integer>
+				<key>HTTPSEnable</key>
+				<integer>0</integer>
+			</dict>
+			<key>VendorConfig</key>
+			<dict>
+				<key>dummy</key>
+				<integer>1</integer>
+			</dict>
+			<key>SafariDomains</key>
+			<array>
+				<string>httpbin.org</string>
+			</array>
+		</dict>
+	</array>
+	<key>PayloadDisplayName</key>
+	<string>QNEAppProxy iOS Test</string>
+	<key>PayloadIdentifier</key>
+	<string>com.example.apple-samplecode.QNE-iOS.AppProxy.298D4B2D-5961-433B-B204-E8A784E10C89</string>
+	<key>PayloadOrganization</key>
+	<string>Apple</string>
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>C4B10884-86B3-4766-ADE1-9A5FC843F666</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>

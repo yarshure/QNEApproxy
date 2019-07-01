@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadUUID</key>
+			<string>944561DB-AEAD-43FA-8DC0-F8661BF5CC9A</string>
+			<key>PayloadType</key>
+			<string>com.apple.vpn.managed.applayer</string>
+			<key>PayloadIdentifier</key>
+			<string>com.apple.vpn.managed.applayer.7EDB76A2-ADFC-4D2B-8831-0BA2B1C75579</string>
+			<key>VPNType</key>
+			<string>VPN</string>
+			<key>VPNSubType</key>
+			<string>com.example.apple-samplecode.QNE-macOS.AppProxy</string>
+			<key>UserDefinedName</key>
+			<string>QNEAppProxy</string>
+			<key>PayloadDescription</key>
+			<string>Configures VPN settings</string>
+			<key>PayloadDisplayName</key>
+			<string>VPN</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>VPNUUID</key>
+			<string>83A8720B-2BD5-4B7E-921D-3D9E312B4ACD</string>
+			<key>VPN</key>
+			<dict>
+				<key>RemoteAddress</key>
+				<string>example.com</string>
+				<key>AuthenticationMethod</key>
+				<string>Password</string>
+				<key>AuthName</key>
+				<string>mrgumby</string>
+				<key>AuthPassword</key>
+				<string>opendoor</string>
+                <key>ProviderBundleIdentifier</key>
+                <string>com.example.apple-samplecode.QNE-macOS.AppProxy.Provider</string>
+                <key>OnDemandMatchAppEnabled</key>
+                <true/>
+			</dict>
+			<key>Proxies</key>
+			<dict>
+				<key>HTTPEnable</key>
+				<integer>0</integer>
+				<key>HTTPSEnable</key>
+				<integer>0</integer>
+			</dict>
+			<key>VendorConfig</key>
+			<dict>
+				<key>dummy</key>
+				<integer>1</integer>
+			</dict>
+			<key>SafariDomains</key>
+			<array>
+				<string>httpbin.org</string>
+			</array>
+		</dict>
+		<dict>
+			<key>PayloadUUID</key>
+			<string>A959CFCB-BABF-4819-B2A6-41F95926AF78</string>
+			<key>PayloadType</key>
+			<string>com.apple.vpn.managed.appmapping</string>
+			<key>PayloadIdentifier</key>
+			<string>com.apple.vpn.managed.appmapping.663DE2E8-0B7D-46D7-B1AE-331985F4082B</string>
+			<key>PayloadDescription</key>
+			<string>Configures TestApp-macOS to use the per-app VPN connection.</string>
+			<key>PayloadDisplayName</key>
+			<string>Per-App VPN App Mappings</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>AppLayerVPNMapping</key>
+			<array>
+				<dict>
+					<key>VPNUUID</key>
+					<string>83A8720B-2BD5-4B7E-921D-3D9E312B4ACD</string>
+					<key>Identifier</key>
+					<string>com.example.apple-samplecode.eskimo1.TestApp-macOS</string>
+					<key>SigningIdentifier</key>
+					<string>com.example.apple-samplecode.eskimo1.TestApp-macOS</string>
+					<key>DesignatedRequirement</key>
+					<string>identifier &quot;com.example.apple-samplecode.eskimo1.TestApp-macOS&quot; and anchor apple generic</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+	<key>PayloadDisplayName</key>
+	<string>QNEAppProxy macOS Test</string>
+	<key>PayloadIdentifier</key>
+	<string>com.example.apple-samplecode.QNE-macOS.AppProxy.D35D4226-6297-4939-8697-941428B863CC</string>
+	<key>PayloadOrganization</key>
+	<string>Apple</string>
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>43F3F298-E499-49AC-8EC5-4D567AA3AB41</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>
