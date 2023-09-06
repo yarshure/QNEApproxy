@@ -414,7 +414,7 @@
 					};
 					E46A381E1E1FC17F00BDDEB4 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = VR9NTVC6BB;
+						DevelopmentTeam = MF572FLMZR;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -442,7 +442,7 @@
 					};
 					E488FDA11F8273C1009660AC = {
 						CreatedOnToolsVersion = 9.0;
-						DevelopmentTeam = VR9NTVC6BB;
+						DevelopmentTeam = MF572FLMZR;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.Mac = {
@@ -458,7 +458,7 @@
 					};
 					E488FDD51F827D5D009660AC = {
 						CreatedOnToolsVersion = 9.0;
-						DevelopmentTeam = VR9NTVC6BB;
+						DevelopmentTeam = MF572FLMZR;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.Mac = {
@@ -474,7 +474,7 @@
 					};
 					E488FDEF1F828742009660AC = {
 						CreatedOnToolsVersion = 9.0;
-						DevelopmentTeam = VR9NTVC6BB;
+						DevelopmentTeam = MF572FLMZR;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -484,6 +484,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = E46A38161E1FC17F00BDDEB4;
@@ -639,7 +640,7 @@
 				DEVELOPMENT_TEAM = VR9NTVC6BB;
 				INFOPLIST_FILE = "TestApp-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.eskimo1.TestApp-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "nz.21e8.apple-samplecode.eskimo1.TestApp-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -651,7 +652,7 @@
 				DEVELOPMENT_TEAM = VR9NTVC6BB;
 				INFOPLIST_FILE = "TestApp-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.eskimo1.TestApp-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "nz.21e8.apple-samplecode.eskimo1.TestApp-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -711,7 +712,7 @@
 				GCC_WARN_UNUSED_PARAMETER = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -773,7 +774,7 @@
 				GCC_WARN_UNUSED_PARAMETER = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -787,10 +788,10 @@
 				CODE_SIGN_ENTITLEMENTS = "App-iOS/App-iOS.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MF572FLMZR;
 				INFOPLIST_FILE = "App-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.QNE-iOS.AppProxy";
+				PRODUCT_BUNDLE_IDENTIFIER = "nz.21e8.apple-samplecode.QNE-iOS.AppProxy";
 				PRODUCT_NAME = QNEAppProxy;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -804,10 +805,10 @@
 				CODE_SIGN_ENTITLEMENTS = "App-iOS/App-iOS.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MF572FLMZR;
 				INFOPLIST_FILE = "App-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.QNE-iOS.AppProxy";
+				PRODUCT_BUNDLE_IDENTIFIER = "e.apple-samplecode.QNE-iOS.AppProxy";
 				PRODUCT_NAME = QNEAppProxy;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
@@ -823,7 +824,7 @@
 				DEVELOPMENT_TEAM = VR9NTVC6BB;
 				INFOPLIST_FILE = Provider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.QNE-iOS.AppProxy.Provider";
+				PRODUCT_BUNDLE_IDENTIFIER = "nz.21e8.apple-samplecode.QNE-iOS.AppProxy.Provider";
 				PRODUCT_NAME = QNEAppProxyProvider;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -840,7 +841,7 @@
 				DEVELOPMENT_TEAM = VR9NTVC6BB;
 				INFOPLIST_FILE = Provider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.QNE-iOS.AppProxy.Provider";
+				PRODUCT_BUNDLE_IDENTIFIER = "nz.21e8.apple-samplecode.QNE-iOS.AppProxy.Provider";
 				PRODUCT_NAME = QNEAppProxyProvider;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -854,10 +855,10 @@
 				CODE_SIGN_ENTITLEMENTS = "App-macOS/App-macOS.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VR9NTVC6BB;
+				DEVELOPMENT_TEAM = MF572FLMZR;
 				INFOPLIST_FILE = "App-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.QNE-macOS.AppProxy";
+				PRODUCT_BUNDLE_IDENTIFIER = "nz.21e8.apple-samplecode.QNE-macOS.AppProxy";
 				PRODUCT_NAME = QNEAppProxy;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
@@ -871,10 +872,10 @@
 				CODE_SIGN_ENTITLEMENTS = "App-macOS/App-macOS.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VR9NTVC6BB;
+				DEVELOPMENT_TEAM = MF572FLMZR;
 				INFOPLIST_FILE = "App-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.QNE-macOS.AppProxy";
+				PRODUCT_BUNDLE_IDENTIFIER = "nz.21e8.apple-samplecode.QNE-macOS.AppProxy";
 				PRODUCT_NAME = QNEAppProxy;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
@@ -897,7 +898,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = VR9NTVC6BB;
+				DEVELOPMENT_TEAM = MF572FLMZR;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -910,7 +911,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.QNE-macOS.AppProxy.Provider";
+				PRODUCT_BUNDLE_IDENTIFIER = "nz.21e8.apple-samplecode.QNE-macOS.AppProxy.Provider";
 				PRODUCT_NAME = QNEAppProxyProvider;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -934,7 +935,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Provider/Provider-macOS.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VR9NTVC6BB;
+				DEVELOPMENT_TEAM = MF572FLMZR;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -942,7 +943,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Provider/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.QNE-macOS.AppProxy.Provider";
+				PRODUCT_BUNDLE_IDENTIFIER = "nz.21e8.apple-samplecode.QNE-macOS.AppProxy.Provider";
 				PRODUCT_NAME = QNEAppProxyProvider;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -955,11 +956,11 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MF572FLMZR;
 				INFOPLIST_FILE = "TestApp-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.eskimo1.TestApp-macOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "nz.21e8.apple-samplecode.eskimo1.TestApp-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
@@ -974,11 +975,11 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MF572FLMZR;
 				INFOPLIST_FILE = "TestApp-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.eskimo1.TestApp-macOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "nz.21e8.apple-samplecode.eskimo1.TestApp-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;

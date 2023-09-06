@@ -14,7 +14,7 @@
 			<key>VPNType</key>
 			<string>VPN</string>
 			<key>VPNSubType</key>
-			<string>com.example.apple-samplecode.QNE-iOS.AppProxy</string>
+			<string>nz.21e8.apple-samplecode.QNE-iOS.AppProxy</string>
 			<key>UserDefinedName</key>
 			<string>QNEAppProxy</string>
 			<key>PayloadDescription</key>
@@ -57,7 +57,7 @@
 	<key>PayloadDisplayName</key>
 	<string>QNEAppProxy iOS Test</string>
 	<key>PayloadIdentifier</key>
-	<string>com.example.apple-samplecode.QNE-iOS.AppProxy.298D4B2D-5961-433B-B204-E8A784E10C89</string>
+	<string>nz.21e8.apple-samplecode.QNE-iOS.AppProxy.298D4B2D-5961-433B-B204-E8A784E10C89</string>
 	<key>PayloadOrganization</key>
 	<string>Apple</string>
 	<key>PayloadRemovalDisallowed</key>

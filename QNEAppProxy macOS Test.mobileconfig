@@ -14,7 +14,7 @@
 			<key>VPNType</key>
 			<string>VPN</string>
 			<key>VPNSubType</key>
-			<string>com.example.apple-samplecode.QNE-macOS.AppProxy</string>
+			<string>nz.21e8.apple-samplecode.QNE-macOS.AppProxy</string>
 			<key>UserDefinedName</key>
 			<string>QNEAppProxy</string>
 			<key>PayloadDescription</key>
@@ -36,7 +36,7 @@
 				<key>AuthPassword</key>
 				<string>opendoor</string>
                 <key>ProviderBundleIdentifier</key>
-                <string>com.example.apple-samplecode.QNE-macOS.AppProxy.Provider</string>
+                <string>nz.21e8.apple-samplecode.QNE-macOS.AppProxy.Provider</string>
                 <key>OnDemandMatchAppEnabled</key>
                 <true/>
 			</dict>
@@ -76,11 +76,11 @@
 					<key>VPNUUID</key>
 					<string>83A8720B-2BD5-4B7E-921D-3D9E312B4ACD</string>
 					<key>Identifier</key>
-					<string>com.example.apple-samplecode.eskimo1.TestApp-macOS</string>
+					<string>nz.21e8.apple-samplecode.eskimo1.TestApp-macOS</string>
 					<key>SigningIdentifier</key>
-					<string>com.example.apple-samplecode.eskimo1.TestApp-macOS</string>
+					<string>nz.21e8.apple-samplecode.eskimo1.TestApp-macOS</string>
 					<key>DesignatedRequirement</key>
-					<string>identifier &quot;com.example.apple-samplecode.eskimo1.TestApp-macOS&quot; and anchor apple generic</string>
+					<string>identifier &quot;nz.21e8.apple-samplecode.eskimo1.TestApp-macOS&quot; and anchor apple generic</string>
 				</dict>
 			</array>
 		</dict>
@@ -88,7 +88,7 @@
 	<key>PayloadDisplayName</key>
 	<string>QNEAppProxy macOS Test</string>
 	<key>PayloadIdentifier</key>
-	<string>com.example.apple-samplecode.QNE-macOS.AppProxy.D35D4226-6297-4939-8697-941428B863CC</string>
+	<string>nz.21e8.apple-samplecode.QNE-macOS.AppProxy.D35D4226-6297-4939-8697-941428B863CC</string>
 	<key>PayloadOrganization</key>
 	<string>Apple</string>
 	<key>PayloadRemovalDisallowed</key>

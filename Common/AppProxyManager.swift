@@ -60,6 +60,10 @@ class AppProxyManager {
         }
     }
     
+    enum MyError: Error {
+        case failedToGetManager
+    }
+    
     private func startLoading() {
         guard case .loading = self.state else { fatalError() }
         NEAppProxyProviderManager.loadAllFromPreferences { (managers, error) in
@@ -67,7 +71,10 @@ class AppProxyManager {
             if let error = error {
                 self.state = .failed(error: error)
             } else {
-                let manager = managers?.first ?? NEAppProxyProviderManager()
+                guard let manager = managers?.first else {
+                    self.state = .failed(error: MyError.failedToGetManager)
+                    return
+                }
                 self.state = .loaded(snapshot: Snapshot(from: manager), manager: manager)
             }
         }
