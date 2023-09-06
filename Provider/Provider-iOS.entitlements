@@ -8,7 +8,7 @@
 	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.example.apple-samplecode.QNE-iOS</string>
+		<string>group.nz.21e8.apple-samplecode.QNE-iOS</string>
 	</array>
 </dict>
 </plist>

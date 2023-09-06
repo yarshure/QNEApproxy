@@ -10,7 +10,7 @@
 	<true/>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>$(TeamIdentifierPrefix)com.example.apple-samplecode.QNE-macOS</string>
+		<string>$(TeamIdentifierPrefix)nz.21e8.apple-samplecode.QNE-macOS</string>
 	</array>
 	<key>com.apple.security.network.client</key>
 	<true/>
