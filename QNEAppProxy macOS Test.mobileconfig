@@ -54,7 +54,7 @@
 			</dict>
 			<key>SafariDomains</key>
 			<array>
-				<string>httpbin.org</string>
+				<string>twitter.com</string>
 			</array>
 		</dict>
 		<dict>

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -41,6 +41,11 @@
 		E488FE031F8287DF009660AC /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E488FDFA1F8287CD009660AC /* NetworkTests.swift */; };
 		E488FE041F8287E3009660AC /* Sites.swift in Sources */ = {isa = PBXBuildFile; fileRef = E488FDFB1F8287CD009660AC /* Sites.swift */; };
 		E488FE051F8287E4009660AC /* Sites.swift in Sources */ = {isa = PBXBuildFile; fileRef = E488FDFB1F8287CD009660AC /* Sites.swift */; };
+		FC837BF92AB7F43900E09F6D /* MyHTTPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC837BF82AB7F43900E09F6D /* MyHTTPHandler.swift */; };
+		FC837BFA2AB7F43900E09F6D /* MyHTTPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC837BF82AB7F43900E09F6D /* MyHTTPHandler.swift */; };
+		FC837BFD2AB7F6B900E09F6D /* NIO in Frameworks */ = {isa = PBXBuildFile; productRef = FC837BFC2AB7F6B900E09F6D /* NIO */; };
+		FC837BFF2AB7F6B900E09F6D /* NIOCore in Frameworks */ = {isa = PBXBuildFile; productRef = FC837BFE2AB7F6B900E09F6D /* NIOCore */; };
+		FC837C012AB7F6B900E09F6D /* NIOHTTP1 in Frameworks */ = {isa = PBXBuildFile; productRef = FC837C002AB7F6B900E09F6D /* NIOHTTP1 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +131,7 @@
 		E488FDF51F828742009660AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E488FDFA1F8287CD009660AC /* NetworkTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		E488FDFB1F8287CD009660AC /* Sites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sites.swift; sourceTree = "<group>"; };
+		FC837BF82AB7F43900E09F6D /* MyHTTPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHTTPHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +170,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC837BFF2AB7F6B900E09F6D /* NIOCore in Frameworks */,
 				E488FDE51F827E52009660AC /* NetworkExtension.framework in Frameworks */,
+				FC837BFD2AB7F6B900E09F6D /* NIO in Frameworks */,
+				FC837C012AB7F6B900E09F6D /* NIOHTTP1 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +251,7 @@
 				E46A385C1E1FCDEA00BDDEB4 /* Provider-iOS.entitlements */,
 				E488FDDB1F827D5D009660AC /* Provider-macOS.entitlements */,
 				E46A385A1E1FC40600BDDEB4 /* Provider.swift */,
+				FC837BF82AB7F43900E09F6D /* MyHTTPHandler.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -376,6 +386,11 @@
 			dependencies = (
 			);
 			name = "Provider-macOS";
+			packageProductDependencies = (
+				FC837BFC2AB7F6B900E09F6D /* NIO */,
+				FC837BFE2AB7F6B900E09F6D /* NIOCore */,
+				FC837C002AB7F6B900E09F6D /* NIOHTTP1 */,
+			);
 			productName = Provider2;
 			productReference = E488FDD61F827D5D009660AC /* QNEAppProxyProvider.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -488,6 +503,9 @@
 				en,
 			);
 			mainGroup = E46A38161E1FC17F00BDDEB4;
+			packageReferences = (
+				FC837BFB2AB7F6B900E09F6D /* XCRemoteSwiftPackageReference "swift-nio" */,
+			);
 			productRefGroup = E46A38201E1FC17F00BDDEB4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -583,6 +601,7 @@
 			files = (
 				E488FE001F8287DA009660AC /* NetworkTests.swift in Sources */,
 				E42F00EB1E4B87B80062D958 /* CustomConfiguration.swift in Sources */,
+				FC837BF92AB7F43900E09F6D /* MyHTTPHandler.swift in Sources */,
 				E46A385B1E1FC40600BDDEB4 /* Provider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -604,6 +623,7 @@
 			files = (
 				E488FE021F8287DE009660AC /* NetworkTests.swift in Sources */,
 				E488FDE91F827EEC009660AC /* CustomConfiguration.swift in Sources */,
+				FC837BFA2AB7F43900E09F6D /* MyHTTPHandler.swift in Sources */,
 				E488FDE31F827DBC009660AC /* Provider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -639,7 +659,10 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = VR9NTVC6BB;
 				INFOPLIST_FILE = "TestApp-iOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "nz.21e8.apple-samplecode.eskimo1.TestApp-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -651,7 +674,10 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = VR9NTVC6BB;
 				INFOPLIST_FILE = "TestApp-iOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "nz.21e8.apple-samplecode.eskimo1.TestApp-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -777,7 +803,8 @@
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -790,7 +817,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MF572FLMZR;
 				INFOPLIST_FILE = "App-iOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "nz.21e8.apple-samplecode.QNE-iOS.AppProxy";
 				PRODUCT_NAME = QNEAppProxy;
 				PROVISIONING_PROFILE = "";
@@ -807,7 +837,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MF572FLMZR;
 				INFOPLIST_FILE = "App-iOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "e.apple-samplecode.QNE-iOS.AppProxy";
 				PRODUCT_NAME = QNEAppProxy;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -823,7 +856,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VR9NTVC6BB;
 				INFOPLIST_FILE = Provider/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "nz.21e8.apple-samplecode.QNE-iOS.AppProxy.Provider";
 				PRODUCT_NAME = QNEAppProxyProvider;
 				PROVISIONING_PROFILE = "";
@@ -840,7 +877,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VR9NTVC6BB;
 				INFOPLIST_FILE = Provider/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "nz.21e8.apple-samplecode.QNE-iOS.AppProxy.Provider";
 				PRODUCT_NAME = QNEAppProxyProvider;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -857,7 +898,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MF572FLMZR;
 				INFOPLIST_FILE = "App-macOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "nz.21e8.apple-samplecode.QNE-macOS.AppProxy";
 				PRODUCT_NAME = QNEAppProxy;
 				SDKROOT = macosx;
@@ -874,7 +918,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MF572FLMZR;
 				INFOPLIST_FILE = "App-macOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "nz.21e8.apple-samplecode.QNE-macOS.AppProxy";
 				PRODUCT_NAME = QNEAppProxy;
 				SDKROOT = macosx;
@@ -908,7 +955,11 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "$(SRCROOT)/Provider/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "nz.21e8.apple-samplecode.QNE-macOS.AppProxy.Provider";
@@ -941,7 +992,11 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "$(SRCROOT)/Provider/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "nz.21e8.apple-samplecode.QNE-macOS.AppProxy.Provider";
 				PRODUCT_NAME = QNEAppProxyProvider;
@@ -958,7 +1013,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MF572FLMZR;
 				INFOPLIST_FILE = "TestApp-macOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = "nz.21e8.apple-samplecode.eskimo1.TestApp-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -977,13 +1035,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MF572FLMZR;
 				INFOPLIST_FILE = "TestApp-macOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = "nz.21e8.apple-samplecode.eskimo1.TestApp-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1056,6 +1118,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FC837BFB2AB7F6B900E09F6D /* XCRemoteSwiftPackageReference "swift-nio" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-nio.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FC837BFC2AB7F6B900E09F6D /* NIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC837BFB2AB7F6B900E09F6D /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIO;
+		};
+		FC837BFE2AB7F6B900E09F6D /* NIOCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC837BFB2AB7F6B900E09F6D /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIOCore;
+		};
+		FC837C002AB7F6B900E09F6D /* NIOHTTP1 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC837BFB2AB7F6B900E09F6D /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIOHTTP1;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E46A38171E1FC17F00BDDEB4 /* Project object */;
 }

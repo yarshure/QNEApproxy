@@ -11,12 +11,15 @@ import NetworkExtension
 import UserNotifications
 #endif
 
+import NIO
+import NIOHTTP1
+
 class Provider : NEAppProxyProvider {
 
     let networkTests = NetworkTests(useOwnQueue: true)
 
     private static var protocolConfigurationKVO: Int = 0
-
+    
     override init() {
         NSLog("QNEAppProxy.Provider: init")
         super.init()
@@ -56,12 +59,73 @@ class Provider : NEAppProxyProvider {
     }
 
     override func handleNewFlow(_ flow: NEAppProxyFlow) -> Bool {
-        NSLog("QNEAppProxy.Provider: new flow (denied)")
-        // self.networkTests.testNWConnection(provider: self, host: "example.com", port: 80, useTLS: false, helloMessage: "GET / HTTP/1.1\r\nHost: example.com\r\nConnection:close\r\n\r\n")
-        // self.networkTests.testTCPStream(host: "93.184.216.34", port: 80, useTLS: false, helloMessage: "GET / HTTP/1.1\r\nHost: example.com\r\nConnection:close\r\n\r\n")
-        // self.networkTests.testTCPStream(host: "example.com", port: 80, useTLS: false, helloMessage: "GET / HTTP/1.1\r\nHost: example.com\r\nConnection:close\r\n\r\n")
-        // self.networkTests.testURLSession()
-        return false
+        NSLog("QNEAppProxy.Provider: new flow")
+        
+        guard let tcpFlow = flow as? NEAppProxyTCPFlow else { return false }
+        
+        let channel = EmbeddedChannel(handlers: [
+            ByteToMessageHandler(HTTPRequestDecoder()),
+            MyHTTPHandler(),
+            HTTPResponseEncoder()
+        ])
+        
+        guard let address = try? SocketAddress(ipAddress: "0.0.0.0", port: 1234) else {
+            NSLog("FAILED TO CREATE SOCKET ADDRESS")
+            return true
+        }
+        
+        let connectedFuture = channel.connect(to: address)
+        
+        NSLog("channel.isActive: " + channel.isActive.description)
+        
+        NSLog("channel.isWritable: " + channel.isWritable.description)
+
+        tcpFlow.readData(completionHandler: { data, error in
+            if let data = data {
+                let buffer = channel.allocator.buffer(bytes: data)
+                do {
+                    try channel.writeInbound(buffer)
+                } catch {
+                    NSLog("Failed to write inbound data: \(error)")
+                }
+            }
+        })
+        
+        tcpFlow.open(withLocalEndpoint: nil) { error in
+            NSLog("opened channel")
+            if let error = error {
+                NSLog("\(error)")
+            }
+        }
+        
+        NSLog("starting timer")
+        
+        DispatchQueue.main.async {
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { timer in
+                do {
+                    let outboundBuffer = try channel.readOutbound(as: ByteBuffer.self)
+                    
+                    if let buffer = outboundBuffer {
+                        let outboundData = Data(buffer.readableBytesView)
+                        NSLog("writing \(outboundData.count) bytes to tcpFlow")
+                        tcpFlow.write(outboundData) { error in
+                            if let error = error {
+                                NSLog("\(error)")
+                            }
+                        }
+                    } else {
+                        NSLog("no data available")
+                    }
+                } catch {
+                    NSLog("\(error)")
+                }
+            })
+        }
+        
+        
+        NSLog("finished")
+        
+        return true
     }
     
     override func handleAppMessage(_ messageData: Data, completionHandler: ((Data?) -> Void)? = nil) {
@@ -88,4 +152,11 @@ class Provider : NEAppProxyProvider {
         
         completionHandler?(messageData)
     }
+    
+    private func read(from tcpFlow: NEAppProxyTCPFlow, into channel: EmbeddedChannel) {
+        tcpFlow.readData(completionHandler: { data, error in
+            
+        })
+    }
+    
 }
