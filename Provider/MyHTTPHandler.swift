@@ -1,7 +1,6 @@
 import NIO
 import Foundation
 import NIOHTTP1
-import NetworkExtension
 
 final class MyHTTPHandler: ChannelInboundHandler {
     typealias InboundIn = HTTPServerRequestPart
@@ -11,8 +10,6 @@ final class MyHTTPHandler: ChannelInboundHandler {
 
     func channelRead(context: ChannelHandlerContext, data: NIOAny) {
         let reqPart = self.unwrapInboundIn(data)
-
-        NSLog("in channelRead")
         
         switch reqPart {
         case .head(let header):
@@ -33,7 +30,7 @@ final class MyHTTPHandler: ChannelInboundHandler {
             let head = HTTPResponseHead(version: .init(major: 1, minor: 1), status: .ok, headers: headers)
             context.write(self.wrapOutboundOut(HTTPServerResponsePart.head(head)), promise: nil)
 
-            let buffer = context.channel.allocator.buffer(string: "Hello, world!")
+            let buffer = context.channel.allocator.buffer(string: "omg this is awesome")
             context.write(self.wrapOutboundOut(HTTPServerResponsePart.body(.byteBuffer(buffer))), promise: nil)
 
             context.writeAndFlush(self.wrapOutboundOut(HTTPServerResponsePart.end(nil))).whenComplete { result in

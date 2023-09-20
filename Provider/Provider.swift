@@ -65,21 +65,18 @@ class Provider : NEAppProxyProvider {
         
         let channel = EmbeddedChannel()
         
-        channel.pipeline.configureHTTPServerPipeline()
-            .flatMap {
-                channel.pipeline.addHandler(MyHTTPHandler())
+        channel.pipeline.configureHTTPServerPipeline().flatMap {
+            channel.pipeline.addHandler(MyHTTPHandler())
+        }.flatMap {
+            channel.pipeline.addHandler(TCPFlowHandler(tcpFlow: tcpFlow), position: .first)
+        }.whenComplete { result in
+            switch result {
+            case .success:
+                print("Successfully added handlers.")
+            case .failure(let error):
+                print("Failed to add handlers: \(error)")
             }
-        
-        guard let address = try? SocketAddress(ipAddress: "0.0.0.0", port: 1234) else {
-            NSLog("FAILED TO CREATE SOCKET ADDRESS")
-            return true
         }
-        
-        let connectedFuture = channel.connect(to: address)
-        
-        NSLog("channel.isActive: " + channel.isActive.description)
-        
-        NSLog("channel.isWritable: " + channel.isWritable.description)
 
         tcpFlow.readData(completionHandler: { data, error in
             if let data = data {
@@ -93,39 +90,10 @@ class Provider : NEAppProxyProvider {
         })
         
         tcpFlow.open(withLocalEndpoint: nil) { error in
-            NSLog("opened channel")
             if let error = error {
                 NSLog("\(error)")
             }
         }
-        
-        NSLog("starting timer")
-        
-        DispatchQueue.main.async {
-            Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { timer in
-                do {
-//                    let outboundBuffer = try channel.readOutbound(as: ByteBuffer.self)
-                    let iodata: IOData? = try channel.readOutbound()
-                    
-                    if case let .some(.byteBuffer(buffer)) = iodata {
-                        let outboundData = Data(buffer.readableBytesView)
-                        NSLog("writing \(outboundData.count) bytes to tcpFlow")
-                        tcpFlow.write(outboundData) { error in
-                            if let error = error {
-                                NSLog("\(error)")
-                            }
-                        }
-                    } else {
-                        NSLog("no data available")
-                    }
-                } catch {
-                    NSLog("\(error)")
-                }
-            })
-        }
-        
-        
-        NSLog("finished")
         
         return true
     }

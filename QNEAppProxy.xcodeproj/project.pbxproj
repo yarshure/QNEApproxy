@@ -46,6 +46,8 @@
 		FC837BFD2AB7F6B900E09F6D /* NIO in Frameworks */ = {isa = PBXBuildFile; productRef = FC837BFC2AB7F6B900E09F6D /* NIO */; };
 		FC837BFF2AB7F6B900E09F6D /* NIOCore in Frameworks */ = {isa = PBXBuildFile; productRef = FC837BFE2AB7F6B900E09F6D /* NIOCore */; };
 		FC837C012AB7F6B900E09F6D /* NIOHTTP1 in Frameworks */ = {isa = PBXBuildFile; productRef = FC837C002AB7F6B900E09F6D /* NIOHTTP1 */; };
+		FCCD46282ABA85CD00836F85 /* TCPFlowHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCD46272ABA85CD00836F85 /* TCPFlowHandler.swift */; };
+		FCCD46292ABA85CD00836F85 /* TCPFlowHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCD46272ABA85CD00836F85 /* TCPFlowHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +134,7 @@
 		E488FDFA1F8287CD009660AC /* NetworkTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		E488FDFB1F8287CD009660AC /* Sites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sites.swift; sourceTree = "<group>"; };
 		FC837BF82AB7F43900E09F6D /* MyHTTPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHTTPHandler.swift; sourceTree = "<group>"; };
+		FCCD46272ABA85CD00836F85 /* TCPFlowHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPFlowHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +255,7 @@
 				E488FDDB1F827D5D009660AC /* Provider-macOS.entitlements */,
 				E46A385A1E1FC40600BDDEB4 /* Provider.swift */,
 				FC837BF82AB7F43900E09F6D /* MyHTTPHandler.swift */,
+				FCCD46272ABA85CD00836F85 /* TCPFlowHandler.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -599,6 +603,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCCD46282ABA85CD00836F85 /* TCPFlowHandler.swift in Sources */,
 				E488FE001F8287DA009660AC /* NetworkTests.swift in Sources */,
 				E42F00EB1E4B87B80062D958 /* CustomConfiguration.swift in Sources */,
 				FC837BF92AB7F43900E09F6D /* MyHTTPHandler.swift in Sources */,
@@ -621,6 +626,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCCD46292ABA85CD00836F85 /* TCPFlowHandler.swift in Sources */,
 				E488FE021F8287DE009660AC /* NetworkTests.swift in Sources */,
 				E488FDE91F827EEC009660AC /* CustomConfiguration.swift in Sources */,
 				FC837BFA2AB7F43900E09F6D /* MyHTTPHandler.swift in Sources */,
