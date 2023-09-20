@@ -63,11 +63,12 @@ class Provider : NEAppProxyProvider {
         
         guard let tcpFlow = flow as? NEAppProxyTCPFlow else { return false }
         
-        let channel = EmbeddedChannel(handlers: [
-            ByteToMessageHandler(HTTPRequestDecoder()),
-            MyHTTPHandler(),
-            HTTPResponseEncoder()
-        ])
+        let channel = EmbeddedChannel()
+        
+        channel.pipeline.configureHTTPServerPipeline()
+            .flatMap {
+                channel.pipeline.addHandler(MyHTTPHandler())
+            }
         
         guard let address = try? SocketAddress(ipAddress: "0.0.0.0", port: 1234) else {
             NSLog("FAILED TO CREATE SOCKET ADDRESS")
@@ -103,9 +104,10 @@ class Provider : NEAppProxyProvider {
         DispatchQueue.main.async {
             Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { timer in
                 do {
-                    let outboundBuffer = try channel.readOutbound(as: ByteBuffer.self)
+//                    let outboundBuffer = try channel.readOutbound(as: ByteBuffer.self)
+                    let iodata: IOData? = try channel.readOutbound()
                     
-                    if let buffer = outboundBuffer {
+                    if case let .some(.byteBuffer(buffer)) = iodata {
                         let outboundData = Data(buffer.readableBytesView)
                         NSLog("writing \(outboundData.count) bytes to tcpFlow")
                         tcpFlow.write(outboundData) { error in

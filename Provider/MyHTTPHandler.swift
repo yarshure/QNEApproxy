@@ -6,6 +6,8 @@ import NetworkExtension
 final class MyHTTPHandler: ChannelInboundHandler {
     typealias InboundIn = HTTPServerRequestPart
     typealias OutboundOut = HTTPServerResponsePart
+    
+    let encoder = HTTPResponseEncoder()
 
     func channelRead(context: ChannelHandlerContext, data: NIOAny) {
         let reqPart = self.unwrapInboundIn(data)
@@ -29,12 +31,12 @@ final class MyHTTPHandler: ChannelInboundHandler {
             var headers = HTTPHeaders()
             headers.add(name: "Content-Type", value: "text/plain")
             let head = HTTPResponseHead(version: .init(major: 1, minor: 1), status: .ok, headers: headers)
-            context.write(self.wrapOutboundOut(.head(head)), promise: nil)
+            context.write(self.wrapOutboundOut(HTTPServerResponsePart.head(head)), promise: nil)
 
             let buffer = context.channel.allocator.buffer(string: "Hello, world!")
-            context.write(self.wrapOutboundOut(.body(.byteBuffer(buffer))), promise: nil)
+            context.write(self.wrapOutboundOut(HTTPServerResponsePart.body(.byteBuffer(buffer))), promise: nil)
 
-            context.writeAndFlush(self.wrapOutboundOut(.end(nil))).whenComplete { result in
+            context.writeAndFlush(self.wrapOutboundOut(HTTPServerResponsePart.end(nil))).whenComplete { result in
                 switch result {
                     case .success:
                         NSLog("HTTP response write succeeded")
